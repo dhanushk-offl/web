@@ -25,9 +25,9 @@
     The best way to reach me is by email at
     <a href="mailto:hello@dhanush.dev">hello@dhanush.dev</a>.
     I'm also on
-    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>,
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>, and
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+    <a href="https://github.com/dhanush-offl/" target="_blank" rel="noopener noreferrer">GitHub</a>,
+    <a href="https://x.com/akadhanu" target="_blank" rel="noopener noreferrer">X</a>, and
+    <a href="https://www.linkedin.com/in/dhanushkandhan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
   </p>
 
   <p>Or, send a message directly:</p>
