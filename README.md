@@ -1,56 +1,37 @@
-# sv
+# Dhanush Kandhan
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Personal website and portfolio of [Dhanush Kandhan](https://github.com/dhanushk-offl).
 
-## Creating a project
+Design and typography inspired from [nadh.in](https://nadh.in/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Pages
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- **Home (`/`)**: Narrative bio, background, volunteering, climate activism, recent writings, and call scheduling.
+- **Projects (`/projects`)**: 3-column table of open-source projects, tools, and products fetched live from CDN.
+- **Blogs (`/blogs` & `/blogs/[slug]`)**: Live Medium RSS feed parser with native on-site reader.
+- **Talks (`/talks`)**: Public speaking appearances, workshops, slides, and recordings.
+- **Contact (`/contact`)**: Direct email outreach and embedded Spotify podcast (*Idu Namma Tech-u*).
 
-To recreate this project with the same configuration:
+## Tech Stack
 
-```sh
-# recreate this project
-bun x sv@1.0.1 create --template minimal --types ts --add sveltekit-adapter="adapter:auto" eslint vitest="usages:unit,component" tailwindcss="plugins:typography,forms" enhanced-img mdsvex --install bun dhanu-portfolio
-```
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) (Svelte 5 runes)
+- **Runtime & Package Manager**: [Bun](https://bun.sh/)
+- **Typography**: [EB Garamond](https://fonts.google.com/specimen/EB+Garamond)
+- **Styling**: Minimalist custom CSS
 
-## Adding features
-
-Add features to your project with `sv add`:
-
-```sh
-npx sv add
-```
-
-For example, to add Tailwind CSS:
+## Development
 
 ```sh
-npx sv add tailwindcss
+bun install
+bun run dev
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Build
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run build
 ```
 
-## Building
+## License
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+[MIT](LICENSE) © 2026 Dhanush Kandhan
