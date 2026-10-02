@@ -52,7 +52,7 @@
       </p>
 
       <p>
-        I can be reached at <a href="mailto:hello@dhanush.dev">hello@dhanush.dev</a>.
+        I can be reached at <a href="mailto:akadhanu@proton.me">akadhanu@proton.me</a>. Last updated on 02 October 2026.
       </p>
     </div>
   </section>
@@ -81,7 +81,7 @@
   .wrap {
     max-width: 920px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 3rem;
+    padding: 1rem 1.5rem 1.5rem;
   }
 
   .home { margin-bottom: 3rem; }
@@ -153,9 +153,9 @@
   .all-link a:hover { color: #000; }
 
   .chat-cta {
-    margin-top: 2.25rem;
-    font-size: 0.95rem;
-    color: #555;
+    margin-top: 1.75rem;
+    font-size: 1.15rem;
+    color: #444;
   }
 
   .chat-cta p {

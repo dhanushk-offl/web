@@ -23,7 +23,7 @@
 
   <p>
     The best way to reach me is by email at
-    <a href="mailto:hello@dhanush.dev">hello@dhanush.dev</a>.
+    <a href="mailto:akadhanu@proton.me">akadhanu@proton.me</a>.
     I'm also on
     <a href="https://github.com/dhanush-offl/" target="_blank" rel="noopener noreferrer">GitHub</a>,
     <a href="https://x.com/akadhanu" target="_blank" rel="noopener noreferrer">X</a>, and
