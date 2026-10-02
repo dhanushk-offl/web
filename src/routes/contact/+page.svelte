@@ -26,7 +26,7 @@
     <h2>Podcast</h2>
     <p>
       If you speak or understand Tamil, take a listen to my tech podcast,
-      <strong>Idu Namma Tech-u</strong>, where I host conversations with amazing developers,
+      <strong>Idu Namma Tech-u (இது நம்ம டெக்கு)</strong>, where I host conversations with amazing developers,
       builders, and engineers from Tamil Nadu.
     </p>
 
