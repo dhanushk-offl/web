@@ -71,6 +71,10 @@
       <p class="all-link"><a href="/blogs">All posts →</a></p>
     </section>
   {/if}
+
+  <section class="chat-cta">
+    <p>Want a chat? <a href="https://cal.com/akadhanu" target="_blank" rel="noopener noreferrer">Schedule a call</a>.</p>
+  </section>
 </div>
 
 <style>
@@ -147,6 +151,16 @@
 
   .all-link a { color: #2d6a4f; }
   .all-link a:hover { color: #000; }
+
+  .chat-cta {
+    margin-top: 2.25rem;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .chat-cta p {
+    margin: 0;
+  }
 
   @media (max-width: 500px) {
     .photo-wrap { float: none; margin: 0 0 1.5rem 0; }
