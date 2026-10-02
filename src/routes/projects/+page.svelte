@@ -12,7 +12,10 @@
 </svelte:head>
 
 <div class="wrap">
-  <p class="intro">A selection of things I've built.</p>
+  <p class="intro">
+    A selection of things I've built. Most of what I build can be found on my
+    <a href="https://github.com/dhanushk-offl" target="_blank" rel="noopener noreferrer">GitHub</a>.
+  </p>
 
   {#if data.featured.length > 0}
     <ul class="projects">
@@ -37,7 +40,7 @@
   .wrap {
     max-width: 920px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 3rem;
+    padding: 1rem 1.5rem 1.5rem;
   }
 
   .intro {

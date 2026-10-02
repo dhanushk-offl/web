@@ -24,15 +24,26 @@ export const load: PageServerLoad = async ({ fetch }) => {
 					!!p &&
 					typeof p === 'object' &&
 					typeof (p as Project).title === 'string' &&
-					typeof (p as Project).description === 'string'
+					typeof (p as Project).description === 'string' &&
+					(p as Project).title.trim().toLowerCase() !== 'a-spect'
 			)
-			.map((p) => ({
-				title: p.title,
-				description: p.description,
-				link: p.link ?? '',
-				tags: Array.isArray(p.tags) ? p.tags.map(String) : [],
-				year: p.year ?? ''
-			}));
+			.map((p) => {
+				const title = p.title.trim();
+				let link = p.link ?? '';
+
+				// Update Prevu link to GitHub repo
+				if (title.toLowerCase() === 'prevu') {
+					link = 'https://github.com/dhanushk-offl/prevu';
+				}
+
+				return {
+					title,
+					description: p.description,
+					link,
+					tags: Array.isArray(p.tags) ? p.tags.map(String) : [],
+					year: p.year ?? ''
+				};
+			});
 
 		return { featured };
 	} catch (err) {
