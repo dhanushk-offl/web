@@ -47,7 +47,7 @@
   </div>
 
   <p class="colophon">
-    This site was inspired by <a href="https://nadh.in/" target="_blank" rel="noopener noreferrer">nadh.in</a>.
+    This site was inspired from <a href="https://nadh.in/" target="_blank" rel="noopener noreferrer">nadh.in</a>.
   </p>
 </div>
 
