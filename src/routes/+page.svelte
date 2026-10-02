@@ -4,9 +4,9 @@
 </script>
 
 <svelte:head>
-  <title>Dhanush Kandhan — Engineer, Thinkerer, Inquisitive</title>
+  <title>Dhanush Kandhan — Engineer, Thinkerer, Inquisitive, Climate Activist</title>
   <meta name="description" content="Software engineer building solutions with AI, web technologies, and autonomous agents." />
-  <meta property="og:title" content="Dhanush Kandhan — Engineer, Thinkerer, Inquisitive" />
+  <meta property="og:title" content="Dhanush Kandhan — Engineer, Thinkerer, Inquisitive, Climate Activist" />
   <meta property="og:description" content="Software engineer building solutions with AI, web technologies, and autonomous agents." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <h2 class="slogan">Engineer / Thinkerer / Inquisitive</h2>
+    <h2 class="slogan">Engineer / Thinkerer / Inquisitive / Climate Activist</h2>
 
     <div class="bio">
       <p>

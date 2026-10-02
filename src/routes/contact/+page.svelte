@@ -45,6 +45,10 @@
       ></iframe>
     </div>
   </div>
+
+  <p class="colophon">
+    This site was inspired by <a href="https://nadh.in/" target="_blank" rel="noopener noreferrer">nadh.in</a>.
+  </p>
 </div>
 
 <style>
@@ -80,5 +84,20 @@
 
   .podcast-embed {
     margin-top: 1rem;
+  }
+
+  .colophon {
+    margin-top: 3rem;
+    font-size: 0.82rem;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  .colophon a {
+    color: #888;
+  }
+
+  .colophon a:hover {
+    color: #2d6a4f;
   }
 </style>
