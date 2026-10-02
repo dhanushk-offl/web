@@ -41,14 +41,6 @@
       slides: null,
     },
     {
-      date: 'Oct 2023',
-      title: 'Train Your AI Model with Ease: A Hands-on Workshop',
-      event: 'AI Odyssey Technoshop, SRM University (AP)',
-      location: 'Amaravati, India',
-      video: null,
-      slides: null,
-    },
-    {
       date: 'Sep 2023',
       title: 'Leverage AI in Business and Management: Shifting Paradigms',
       event: 'TechSpark IIITB 2023',
