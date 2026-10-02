@@ -16,10 +16,7 @@
   <section class="home">
     <div class="photo-wrap">
       <div class="photo">
-        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Profile photo placeholder">
-          <circle cx="60" cy="44" r="24" fill="#ccc"/>
-          <ellipse cx="60" cy="96" rx="36" ry="24" fill="#ccc"/>
-        </svg>
+        <img src="/images/dhanu-headshot.png" alt="Dhanush Kandhan" width="120" height="120" />
       </div>
     </div>
 
@@ -98,10 +95,15 @@
     border-radius: 50%;
     overflow: hidden;
     filter: grayscale(100%);
-    background: #ddd;
+    background: #eee;
   }
 
-  .photo svg { width: 100%; height: 100%; }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   .slogan {
     font-size: 1rem;
