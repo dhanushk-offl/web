@@ -32,14 +32,16 @@
 
     <div class="podcast-embed">
       <iframe
-        title="Idu Namma Tech-u Podcast"
-        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+        title="Idu Namma Tech-u on Spotify"
+        data-testid="embed-iframe"
+        style="border-radius:12px; width:100%; max-width:640px;"
+        src="https://open.spotify.com/embed/show/7wNAoRcAzNzEf51JhNH3vo?utm_source=generator&si=1a18d87b64c44267"
+        width="100%"
+        height="352"
         frameborder="0"
-        height="360"
-        width="640"
-        style="width:100%;max-width:640px;height:auto;aspect-ratio:16/9;overflow:hidden;border-radius:8px;border:1px solid #e0e0e0;"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-        src="https://embed.podcasts.apple.com/us/podcast/idu-namma-tech-u/id1705568004?size=large"
+        allowfullscreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
       ></iframe>
     </div>
   </div>
