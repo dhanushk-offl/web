@@ -47,7 +47,7 @@
       </p>
 
       <p>
-        In 2025, I started <a href="https://letretro.com" target="_blank" rel="noopener noreferrer">LetRetro</a> to make sprint retrospectives easier and more insightful for engineering teams. Before that, I learned the ropes through internships: building machine learning models to optimize cloud gaming infrastructure at <a href="https://nvidia.com" target="_blank" rel="noopener noreferrer">NVIDIA</a>, creating automation agents to track shadow IT usage at <a href="https://stitchflow.com" target="_blank" rel="noopener noreferrer">Stitchflow</a>, and rewriting a legacy frontend codebase at <a href="https://talentship.io" target="_blank" rel="noopener noreferrer">Talentship</a>, which is where my journey into development truly began. Afterward, I also spent some time consulting with <a href="https://scale.com" target="_blank" rel="noopener noreferrer">Scale AI</a> on model inference optimization.
+        In 2025, I started <a href="https://letretro.com" target="_blank" rel="noopener noreferrer">LetRetro</a> to make sprint retrospectives easier and more insightful, and currently run it as my micro-SaaS. Before that, I learned the ropes through internships: building machine learning models to optimize cloud gaming infrastructure at <a href="https://nvidia.com" target="_blank" rel="noopener noreferrer">NVIDIA</a>, creating automation agents to track shadow IT usage at <a href="https://stitchflow.com" target="_blank" rel="noopener noreferrer">Stitchflow</a>, and rewriting a legacy frontend codebase at <a href="https://talentship.io" target="_blank" rel="noopener noreferrer">Talentship</a>, which is where my journey into development truly began. Afterward, I also spent some time consulting with <a href="https://scale.com" target="_blank" rel="noopener noreferrer">Scale AI</a> on model inference optimization.
       </p>
 
       <p>
@@ -328,6 +328,10 @@
       padding: 0.15rem 0.4rem;
       bottom: 0.5rem;
       right: 0.5rem;
+    }
+
+    .bio p {
+      text-align: justify;
     }
   }
 </style>
