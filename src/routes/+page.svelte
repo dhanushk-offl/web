@@ -1,15 +1,34 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import type { PageData } from './$types';
+  import { photos } from '#lib/data/photography';
+  import Seo from '#lib/components/Seo.svelte';
+
   let { data }: { data: PageData } = $props();
+
+  let current = $state(0);
+  let loadedImages = $state<boolean[]>(photos.map(() => false));
+
+  function handleLoad(i: number) {
+    loadedImages[i] = true;
+  }
+
+  onMount(() => {
+    const interval = setInterval(() => {
+      current = (current + 1) % photos.length;
+    }, 8500);
+    return () => clearInterval(interval);
+  });
 </script>
 
+<Seo
+  title="Dhanush Kandhan — Engineer, Thinkerer, Inquisitive, Climate Activist"
+  description="Software engineer building solutions with AI, web technologies, and autonomous agents."
+  path="/"
+/>
+
 <svelte:head>
-  <title>Dhanush Kandhan — Engineer, Thinkerer, Inquisitive, Climate Activist</title>
-  <meta name="description" content="Software engineer building solutions with AI, web technologies, and autonomous agents." />
-  <meta property="og:title" content="Dhanush Kandhan — Engineer, Thinkerer, Inquisitive, Climate Activist" />
-  <meta property="og:description" content="Software engineer building solutions with AI, web technologies, and autonomous agents." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <link rel="preload" as="image" href={photos[0].src} />
 </svelte:head>
 
 <div class="wrap">
@@ -47,6 +66,21 @@
         I believe in writing over speaking, in boring technology over shiny technology,
         and in making software that lasts longer than the hype cycle that spawned it.
       </p>
+
+      <div class="slideshow" class:shimmer={!loadedImages[current]}>
+        {#each photos as photo, i}
+          <div class="slide" class:active={i === current} aria-hidden={i !== current}>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              onload={() => handleLoad(i)}
+            />
+            <span class="slide-location">{photo.location}</span>
+          </div>
+        {/each}
+      </div>
+      <p class="slideshow-caption"><em>Such pieces of architecture and scene as mine own wandering eye hath chanced to preserve.</em></p>
 
       <p>Outside of work, I spend time volunteering with non-profits and developer communities:</p>
 
@@ -140,6 +174,77 @@
 
   .bio p { margin-bottom: 0.9rem; }
 
+  /* Slideshow */
+  .slideshow {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin: 0.5rem 0 1.75rem;
+    background: #111;
+  }
+
+  .slideshow.shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #1a1a1a 25%, #272727 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+    pointer-events: none;
+  }
+
+  .slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+  }
+
+  .slide-location {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.9rem;
+    font-size: 0.7rem;
+    font-style: italic;
+    color: #f0f0f0;
+    letter-spacing: 0.04em;
+    background: rgba(0, 0, 0, 0.52);
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .slideshow-caption {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    margin: -0.9rem 0 1.75rem;
+    font-style: italic;
+  }
+
   .volunteer-list {
     margin: 0 0 1.25rem;
     padding-left: 1.25rem;
@@ -212,6 +317,10 @@
       height: 170px;
       max-width: 55vw;
       max-height: 55vw;
+    }
+
+    .slideshow-caption {
+      font-size: 0.68rem;
     }
   }
 </style>

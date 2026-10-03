@@ -1,15 +1,18 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import Seo from '#lib/components/Seo.svelte';
   let { data }: { data: PageData } = $props();
 </script>
 
-<svelte:head>
-  <title>Projects — Dhanush Kandhan</title>
-  <meta name="description" content="Open source software and personal projects of Dhanush Kandhan." />
-  <meta property="og:title" content="Projects — Dhanush Kandhan" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-</svelte:head>
+<Seo
+  title="Projects — Dhanush Kandhan"
+  description="Open source software and personal projects built by Dhanush Kandhan."
+  path="/projects"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Projects', path: '/projects' }
+  ]}
+/>
 
 <div class="wrap">
   <p class="intro">

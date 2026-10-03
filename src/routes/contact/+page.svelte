@@ -1,10 +1,16 @@
-<svelte:head>
-  <title>Contact — Dhanush Kandhan</title>
-  <meta name="description" content="Get in touch with Dhanush Kandhan." />
-  <meta property="og:title" content="Contact — Dhanush Kandhan" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-</svelte:head>
+<script lang="ts">
+  import Seo from '#lib/components/Seo.svelte';
+</script>
+
+<Seo
+  title="Contact — Dhanush Kandhan"
+  description="Get in touch with Dhanush Kandhan by email or through social platforms."
+  path="/contact"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' }
+  ]}
+/>
 
 <div class="wrap">
   <h1>Contact</h1>

@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Seo from '#lib/components/Seo.svelte';
+
   const talks = [
     {
       date: 'Nov 2025',
@@ -51,13 +53,15 @@
   ];
 </script>
 
-<svelte:head>
-  <title>Talks — Dhanush Kandhan</title>
-  <meta name="description" content="Public talks, workshops, and technical presentations by Dhanush Kandhan." />
-  <meta property="og:title" content="Talks — Dhanush Kandhan" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-</svelte:head>
+<Seo
+  title="Talks — Dhanush Kandhan"
+  description="Public talks, workshops, and technical presentations by Dhanush Kandhan."
+  path="/talks"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Talks', path: '/talks' }
+  ]}
+/>
 
 <div class="wrap">
   <h1>Talks</h1>

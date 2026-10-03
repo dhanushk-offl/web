@@ -5,6 +5,7 @@ import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import adapter from '@sveltejs/adapter-auto';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { svelteSitemap } from 'svelte-sitemap/vite';
 
 export default defineConfig({
 	plugins: [
@@ -23,7 +24,8 @@ export default defineConfig({
 			adapter: adapter(),
 			preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
 			extensions: ['.svelte', '.svx', '.md']
-		})
+		}),
+		svelteSitemap({ domain: 'https://dhanu.letretro.com' })
 	],
 	test: {
 		expect: { requireAssertions: true },

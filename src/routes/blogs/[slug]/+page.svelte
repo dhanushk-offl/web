@@ -1,18 +1,32 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import Seo from '#lib/components/Seo.svelte';
   let { data }: { data: PageData } = $props();
 </script>
 
-<svelte:head>
-  <title>{data.post.title} — Dhanush</title>
-  <meta name="description" content={data.post.excerpt} />
-  <meta property="og:title" content={data.post.title} />
-  <meta property="og:description" content={data.post.excerpt} />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content={data.post.title} />
-  <meta name="twitter:description" content={data.post.excerpt} />
-</svelte:head>
+<Seo
+  title="{data.post.title} — Dhanush Kandhan"
+  description={data.post.excerpt}
+  path="/blogs/{data.post.slug}"
+  type="article"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blogs' },
+    { name: data.post.title, path: `/blogs/${data.post.slug}` }
+  ]}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: data.post.title,
+    description: data.post.excerpt,
+    author: {
+      '@type': 'Person',
+      name: 'Dhanush Kandhan',
+      url: 'https://dhanu.letretro.com'
+    },
+    url: `https://dhanu.letretro.com/blogs/${data.post.slug}`
+  }}
+/>
 
 <div class="wrap">
   <div class="back">
