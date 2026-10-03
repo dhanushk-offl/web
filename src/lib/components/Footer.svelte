@@ -1,5 +1,5 @@
 <footer class="footer">
-  <span class="copy">தனுஷ் கந்தன் (Dhanush Kandhan) &copy; {new Date().getFullYear()}.</span>
+  <span class="copy">தனுஷ் கந்தன் / ധനുഷ് കന്ദൻ / Dhanush Kandhan &copy; {new Date().getFullYear()}.</span>
   <div class="links">
     <a href="https://github.com/dhanush-offl/" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://www.linkedin.com/in/dhanushkandhan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -38,5 +38,11 @@
 
   .links a:hover {
     color: #2d6a4f;
+  }
+
+  @media (max-width: 640px) {
+    .copy {
+      font-size: 0.68rem;
+    }
   }
 </style>

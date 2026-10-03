@@ -322,5 +322,12 @@
     .slideshow-caption {
       font-size: 0.68rem;
     }
+
+    .slide-location {
+      font-size: 0.6rem;
+      padding: 0.15rem 0.4rem;
+      bottom: 0.5rem;
+      right: 0.5rem;
+    }
   }
 </style>
