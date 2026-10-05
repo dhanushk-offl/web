@@ -51,12 +51,13 @@
       </p>
 
       <p>
-        I build things on the web and in the terminal. I care deeply about
-        customer experience, simple systems, and software that scales.
-        These days, I mostly write programs in Python, TypeScript, and occasionally Rust.
+        In 2024, my passage into academia began through an external research programme hosted by the <a href="https://www.cam.ac.uk" target="_blank" rel="noopener noreferrer">University of Cambridge</a> in AI and computer ethics, in partnership with <a href="https://deepmind.google" target="_blank" rel="noopener noreferrer">Google DeepMind</a>. There, I explored defenses against deepfake image generation, investigating techniques to introduce dissolved and uneven pixel colour matrices within generative pipelines to forestall malicious synthesis from within, in place of outward guardrails. Alongside this, I pursued independent research into Responsible AI in earnest, spending quiet hours across reading rooms, labs, and discussions with researchers, which culminated in independent papers alongside contributions to internal journals.
       </p>
 
       <p>
+        I build things on the web and in the terminal. I care deeply about
+        customer experience, simple systems, and software that scales.
+        These days, I mostly write programs in Python, TypeScript, and occasionally Rust.
         I contribute to open source projects and occasionally speak at
         conferences and community meetups about things I've built or learnt.
         Some of my personal projects can be <a href="/projects">found here</a>.
