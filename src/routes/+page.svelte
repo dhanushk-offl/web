@@ -50,9 +50,11 @@
         In 2025, I started <a href="https://letretro.com" target="_blank" rel="noopener noreferrer">LetRetro</a> to make sprint retrospectives easier and more insightful, and currently run it as my micro-SaaS. Before that, I learned the ropes through internships: building machine learning models to optimize cloud gaming infrastructure at <a href="https://nvidia.com" target="_blank" rel="noopener noreferrer">NVIDIA</a>, creating automation agents to track shadow IT usage at <a href="https://stitchflow.com" target="_blank" rel="noopener noreferrer">Stitchflow</a>, and rewriting a legacy frontend codebase at <a href="https://talentship.io" target="_blank" rel="noopener noreferrer">Talentship</a>, which is where my journey into development truly began. Afterward, I also spent some time consulting with <a href="https://scale.com" target="_blank" rel="noopener noreferrer">Scale AI</a> on model inference optimization.
       </p>
 
+      <!--
       <p>
         In 2024, my passage into academia began through an external research programme hosted by the <a href="https://www.cam.ac.uk" target="_blank" rel="noopener noreferrer">University of Cambridge</a> in AI and computer ethics, in partnership with <a href="https://deepmind.google" target="_blank" rel="noopener noreferrer">Google DeepMind</a>. There, I explored defenses against deepfake image generation, investigating techniques to introduce dissolved and uneven pixel colour matrices within generative pipelines to forestall malicious synthesis from within, in place of outward guardrails. Alongside this, I pursued independent research into Responsible AI in earnest, spending quiet hours across reading rooms, labs, and discussions with researchers, which culminated in independent papers alongside contributions to internal journals.
       </p>
+      -->
 
       <p>
         I build things on the web and in the terminal. I care deeply about
