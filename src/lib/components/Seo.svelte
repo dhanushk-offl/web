@@ -4,6 +4,7 @@
     description: string;
     path: string;
     type?: 'website' | 'article';
+    ogImage?: string | null;
     breadcrumbs?: { name: string; path: string }[];
     jsonLd?: Record<string, unknown>;
   }
@@ -16,12 +17,13 @@
     description,
     path,
     type = 'website',
+    ogImage = null,
     breadcrumbs = [],
     jsonLd
   }: Props = $props();
 
   const canonical = $derived(`${SITE}${path}`);
-  const ogImage = `${SITE}/images/dhanu-headshot.png`;
+  const resolvedOgImage = $derived(ogImage ?? `${SITE}/images/dhanu-headshot.png`);
 
   const breadcrumbLd = $derived(breadcrumbs.length > 0
     ? {
@@ -61,15 +63,15 @@
   <meta property="og:description" content={description} />
   <meta property="og:type" content={type} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={ogImage} />
+  <meta property="og:image" content={resolvedOgImage} />
   <meta property="og:site_name" content={SITE_NAME} />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@akadhanu" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image" content={resolvedOgImage} />
 
   <!-- Person JSON-LD -->
   {@html `<script type="application/ld+json">${JSON.stringify(personLd)}<\/script>`}

@@ -5,6 +5,7 @@ export interface Post {
 	date: string;
 	excerpt: string;
 	contentHtml: string; // full content HTML, cover removed
+	coverImage: string | null; // cover image URL from first <figure>, if present
 }
 
 function parseCdata(str: string): string {
@@ -19,6 +20,14 @@ function extractSlug(url: string): string {
 	} catch {
 		return '';
 	}
+}
+
+/** Extract the cover image URL from the first <figure> block */
+function extractCoverImage(html: string): string | null {
+	const figureMatch = html.match(/^[\s]*<figure>[\s\S]*?<\/figure>/);
+	if (!figureMatch) return null;
+	const imgMatch = figureMatch[0].match(/<img[^>]+src="([^"]+)"/);
+	return imgMatch ? imgMatch[1] : null;
 }
 
 /** Remove the first <figure> block (cover image + caption) */
@@ -93,9 +102,10 @@ export async function fetchPosts(fetchFn: typeof fetch): Promise<Post[]> {
 		const encodedRaw =
 			block.match(/<content:encoded>([\s\S]*?)<\/content:encoded>/)?.[1] ?? '';
 		const rawHtml = parseCdata(encodedRaw);
+		const coverImage = extractCoverImage(rawHtml);
 		const contentHtml = sanitize(removeTracker(removeCover(rawHtml)));
 		const excerpt = toExcerpt(contentHtml);
 
-		return { slug, title, link, date, excerpt, contentHtml };
+		return { slug, title, link, date, excerpt, contentHtml, coverImage };
 	});
 }

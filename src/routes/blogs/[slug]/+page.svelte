@@ -9,6 +9,7 @@
   description={data.post.excerpt}
   path="/blogs/{data.post.slug}"
   type="article"
+  ogImage={data.post.coverImage}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blogs' },
@@ -19,6 +20,7 @@
     '@type': 'BlogPosting',
     headline: data.post.title,
     description: data.post.excerpt,
+    image: data.post.coverImage ?? undefined,
     author: {
       '@type': 'Person',
       name: 'Dhanush Kandhan',
