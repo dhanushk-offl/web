@@ -197,4 +197,15 @@
 
   .post-content :global(strong) { font-weight: 600; }
   .post-content :global(em) { font-style: italic; }
+
+  /* Responsive video embeds (YouTube, Vimeo, etc.) */
+  .post-content :global(iframe) {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 4px;
+    display: block;
+    margin: 1.5rem 0;
+  }
 </style>

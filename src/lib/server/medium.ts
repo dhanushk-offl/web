@@ -40,12 +40,35 @@ function removeTracker(html: string): string {
 	return html.replace(/<img[^>]+medium\.com\/_\/stat[^>]+>/g, '');
 }
 
-/** Sanitize: strip script / iframe / style tags */
+/** Trusted video embed hostnames */
+const ALLOWED_IFRAME_HOSTS = [
+	'cdn.embedly.com',                                                          // Medium wraps all embeds via Embedly
+	'youtube.com', 'www.youtube.com', 'youtube-nocookie.com', 'www.youtube-nocookie.com',
+	'vimeo.com', 'player.vimeo.com',
+	'loom.com', 'www.loom.com',
+	'wistia.com', 'fast.wistia.com'
+];
+
+/** Sanitize: strip script / style tags and untrusted iframes */
 function sanitize(html: string): string {
-	return html
+	// Strip scripts and styles unconditionally
+	let out = html
 		.replace(/<script[\s\S]*?<\/script>/gi, '')
-		.replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
 		.replace(/<style[\s\S]*?<\/style>/gi, '');
+
+	// Strip iframes that are NOT from trusted video platforms
+	out = out.replace(/<iframe[\s\S]*?<\/iframe>/gi, (match) => {
+		const srcMatch = match.match(/src=["']([^"']+)["']/i);
+		if (!srcMatch) return '';
+		try {
+			const host = new URL(srcMatch[1]).hostname;
+			return ALLOWED_IFRAME_HOSTS.includes(host) ? match : '';
+		} catch {
+			return '';
+		}
+	});
+
+	return out;
 }
 
 /** Plain-text excerpt from HTML, ~280 chars */
