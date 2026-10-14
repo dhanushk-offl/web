@@ -71,6 +71,38 @@ function sanitize(html: string): string {
 	return out;
 }
 
+/** Fix Medium's <pre> blocks: replace <br> with newlines, decode HTML entities */
+function fixCodeBlocks(html: string): string {
+	return html.replace(/<pre>([\s\S]*?)<\/pre>/gi, (_match, inner) => {
+		const fixed = inner
+			.replace(/<br\s*\/?>/gi, '\n')
+			.replace(/&quot;/g, '"')
+			.replace(/&amp;/g, '&')
+			.replace(/&lt;/g, '<')
+			.replace(/&gt;/g, '>')
+			.replace(/&#39;/g, "'")
+			.replace(/&nbsp;/g, ' ');
+		return `<pre><code>${fixed}</code></pre>`;
+	});
+}
+
+/** Convert backtick-wrapped text in paragraphs into <code> tags.
+ *  Medium leaves raw backticks in paragraph text instead of wrapping in <code>. */
+function fixInlineCode(html: string): string {
+	// Protect pre blocks so backtick-replacement doesn't touch code blocks
+	const PRE_PLACEHOLDER = '\x00PRE\x00';
+	const preBlocks: string[] = [];
+	const withoutPre = html.replace(/<pre[\s\S]*?<\/pre>/gi, (match) => {
+		preBlocks.push(match);
+		return `${PRE_PLACEHOLDER}${preBlocks.length - 1}${PRE_PLACEHOLDER}`;
+	});
+	// Convert backtick inline code in remaining HTML
+	const converted = withoutPre.replace(/`([^`\n]+?)`/g, '<code>$1</code>');
+	// Restore pre blocks
+	return converted.replace(new RegExp(`${PRE_PLACEHOLDER}(\\d+)${PRE_PLACEHOLDER}`, 'g'),
+		(_, i) => preBlocks[Number(i)]);
+}
+
 /** Plain-text excerpt from HTML, ~280 chars */
 function toExcerpt(html: string): string {
 	const plain = html
@@ -126,7 +158,7 @@ export async function fetchPosts(fetchFn: typeof fetch): Promise<Post[]> {
 			block.match(/<content:encoded>([\s\S]*?)<\/content:encoded>/)?.[1] ?? '';
 		const rawHtml = parseCdata(encodedRaw);
 		const coverImage = extractCoverImage(rawHtml);
-		const contentHtml = sanitize(removeTracker(removeCover(rawHtml)));
+		const contentHtml = fixInlineCode(fixCodeBlocks(sanitize(removeTracker(removeCover(rawHtml)))));
 		const excerpt = toExcerpt(contentHtml);
 
 		return { slug, title, link, date, excerpt, contentHtml, coverImage };

@@ -95,15 +95,16 @@
   .post-content :global(h2),
   .post-content :global(h3),
   .post-content :global(h4) {
-    font-weight: 400;
-    margin: 1.75rem 0 0.6rem;
-    color: #222;
+    font-weight: 600;
+    margin: 2.2rem 0 0.75rem;
+    color: #1a1a1a;
     line-height: 1.3;
   }
 
-  .post-content :global(h2) { font-size: 1.3rem; }
-  .post-content :global(h3) { font-size: 1.1rem; }
-  .post-content :global(h4) { font-size: 1rem; font-style: italic; }
+  .post-content :global(h1) { font-size: 1.7rem; }
+  .post-content :global(h2) { font-size: 1.45rem; }
+  .post-content :global(h3) { font-size: 1.2rem; font-weight: 600; }
+  .post-content :global(h4) { font-size: 1.05rem; font-weight: 500; font-style: italic; }
 
   .post-content :global(a) {
     color: #2d6a4f;
@@ -136,29 +137,36 @@
   }
 
   .post-content :global(pre) {
-    background: #f4f4f4;
-    border: 1px solid #e8e8e8;
-    border-radius: 3px;
-    padding: 0.85rem 1rem;
+    background: #f8f8f8;
+    border: 1px solid #e4e4e4;
+    border-left: 3px solid #2d6a4f;
+    border-radius: 4px;
+    padding: 1rem 1.1rem;
     overflow-x: auto;
-    font-size: 0.8rem;
-    line-height: 1.55;
-    margin: 1rem 0;
-  }
-
-  .post-content :global(code) {
-    font-size: 0.82em;
-    background: #f4f4f4;
-    padding: 1px 5px;
-    border-radius: 3px;
-    color: #444;
+    margin: 1.5rem 0;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
   }
 
   .post-content :global(pre code) {
     background: none;
     padding: 0;
-    font-size: inherit;
-    color: inherit;
+    border: none;
+    border-radius: 0;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: #1a1a1a;
+    white-space: pre;
+    font-family: inherit;
+  }
+
+  .post-content :global(code) {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+    font-size: 0.82em;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #c7254e;
+    border: 1px solid #e4e4e4;
   }
 
   .post-content :global(figure) {
