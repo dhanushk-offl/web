@@ -21,10 +21,27 @@
     headline: data.post.title,
     description: data.post.excerpt,
     image: data.post.coverImage ?? undefined,
+    datePublished: (() => {
+      try {
+        const d = new Date(data.post.date);
+        return !isNaN(d.getTime()) ? d.toISOString().split('T')[0] : undefined;
+      } catch {
+        return undefined;
+      }
+    })(),
     author: {
       '@type': 'Person',
       name: 'Dhanush Kandhan',
       url: 'https://dhanu.letretro.com'
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Dhanush Kandhan',
+      url: 'https://dhanu.letretro.com'
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://dhanu.letretro.com/blogs/${data.post.slug}`
     },
     url: `https://dhanu.letretro.com/blogs/${data.post.slug}`
   }}
