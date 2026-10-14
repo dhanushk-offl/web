@@ -14,6 +14,7 @@
   }
 
   onMount(() => {
+    current = Math.floor(Math.random() * photos.length);
     const interval = setInterval(() => {
       current = (current + 1) % photos.length;
     }, 8500);
