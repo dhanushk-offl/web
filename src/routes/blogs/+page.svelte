@@ -31,13 +31,17 @@
       {/each}
     </ul>
   {/if}
+
+  <p class="more">
+    You can find my previous blogs apart from this on my <a href="https://medium.com/@itzmedhanu" target="_blank" rel="noopener noreferrer">Medium</a>.
+  </p>
 </div>
 
 <style>
   .wrap {
     max-width: 920px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 3rem;
+    padding: 1rem 1.5rem 0.5rem;
   }
 
   h1 {
@@ -69,5 +73,20 @@
     font-style: italic;
     min-width: 88px;
     flex-shrink: 0;
+  }
+
+  .more {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .more a {
+    color: #2d6a4f;
+  }
+
+  .more a:hover {
+    color: #000;
   }
 </style>
