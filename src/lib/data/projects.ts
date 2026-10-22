@@ -17,6 +17,14 @@ export const projects: Project[] = [
 		logo: '/assets/images/letretro.png'
 	},
 	{
+		title: 'Agent Terminal',
+		description:
+			'A terminal that understands AI agents. Project workspaces, live process metrics, and native Claude Code + Codex support.',
+		link: 'https://github.com/DaniAkash/agent-terminal',
+		tags: ['Tool', 'AI Agent', 'Terminal', 'Open Source'],
+		year: '2026'
+	},
+	{
 		title: 'Prevu',
 		description: 'Local first Preview social link cards instantly before deployment.',
 		link: 'https://github.com/dhanushk-offl/prevu',
