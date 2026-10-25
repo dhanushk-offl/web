@@ -25,6 +25,13 @@ export const projects: Project[] = [
 		year: '2026'
 	},
 	{
+		title: 'agentstat',
+		description: 'AI account usage, quotas, balances, and reset times for Rust applications.',
+		link: 'https://github.com/dhanushk-offl/agentstat',
+		tags: ['Rust', 'Tool', 'AI', 'Open Source'],
+		year: '2026'
+	},
+	{
 		title: 'Prevu',
 		description: 'Local first Preview social link cards instantly before deployment.',
 		link: 'https://github.com/dhanushk-offl/prevu',
