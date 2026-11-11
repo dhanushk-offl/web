@@ -11,7 +11,11 @@
 
 <header class="header">
   <div class="logo">
-    <a href="/">Dhanush Kandhan</a>
+    {#if page.url.pathname === "/"}
+      <h1><a href="/">Dhanush Kandhan</a></h1>
+    {:else}
+      <a href="/">Dhanush Kandhan</a>
+    {/if}
   </div>
   <nav class="nav" aria-label="Main navigation">
     {#each navLinks as link}
@@ -33,6 +37,12 @@
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
+  }
+
+  .logo h1 {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   .logo a {

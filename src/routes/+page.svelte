@@ -23,8 +23,8 @@
 </script>
 
 <Seo
-  title="Dhanush Kandhan — Engineer, Thinkerer, Inquisitive, Climate Activist"
-  description="Software engineer building solutions with AI, web technologies, and autonomous agents."
+  title="Dhanush Kandhan — Software Engineer & Climate Activist"
+  description="Explore Dhanush Kandhan’s software projects, writing, talks, and work in open source and climate advocacy."
   path="/"
 />
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import Seo from '#lib/components/Seo.svelte';
+  import { SITE_URL } from '#lib/site';
   let { data }: { data: PageData } = $props();
 </script>
 
@@ -32,18 +33,18 @@
     author: {
       '@type': 'Person',
       name: 'Dhanush Kandhan',
-      url: 'https://dhanu.letretro.com'
+      url: SITE_URL
     },
     publisher: {
       '@type': 'Person',
       name: 'Dhanush Kandhan',
-      url: 'https://dhanu.letretro.com'
+      url: SITE_URL
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://dhanu.letretro.com/blogs/${data.post.slug}`
+      '@id': `${SITE_URL}/blogs/${data.post.slug}`
     },
-    url: `https://dhanu.letretro.com/blogs/${data.post.slug}`
+    url: `${SITE_URL}/blogs/${data.post.slug}`
   }}
 />
 

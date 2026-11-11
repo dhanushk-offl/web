@@ -15,6 +15,7 @@
 />
 
 <div class="wrap">
+  <h1>Projects</h1>
   <p class="intro">
     A selection of things I've built. Most of what I build can be found on my
     <a href="https://github.com/dhanushk-offl" target="_blank" rel="noopener noreferrer">GitHub</a>.
@@ -44,6 +45,12 @@
     max-width: 920px;
     margin: 0 auto;
     padding: 1rem 1.5rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
   }
 
   .intro {

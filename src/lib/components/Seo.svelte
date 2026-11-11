@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_URL, SITE_NAME } from '#lib/site';
   interface Props {
     title: string;
     description: string;
@@ -8,9 +9,6 @@
     breadcrumbs?: { name: string; path: string }[];
     jsonLd?: Record<string, unknown>;
   }
-
-  const SITE = 'https://dhanu.letretro.com';
-  const SITE_NAME = 'Dhanush Kandhan';
 
   let {
     title,
@@ -22,8 +20,8 @@
     jsonLd
   }: Props = $props();
 
-  const canonical = $derived(`${SITE}${path}`);
-  const resolvedOgImage = $derived(ogImage ?? `${SITE}/images/dhanu-headshot.png`);
+  const canonical = $derived(`${SITE_URL}${path}`);
+  const resolvedOgImage = $derived(ogImage ?? `${SITE_URL}/images/dhanu-headshot.png`);
 
   const breadcrumbLd = $derived(breadcrumbs.length > 0
     ? {
@@ -33,16 +31,27 @@
           '@type': 'ListItem',
           position: i + 1,
           name: b.name,
-          item: `${SITE}${b.path}`
+          item: `${SITE_URL}${b.path}`
         }))
       }
     : null);
+
+  const websiteLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: `${SITE_URL}/`
+  };
+
+  function serializeJsonLd(value: object): string {
+    return JSON.stringify(value).replace(/</g, '\\u003c');
+  }
 
   const personLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: SITE_NAME,
-    url: SITE,
+    url: SITE_URL,
     sameAs: [
       'https://github.com/dhanushk-offl/',
       'https://www.linkedin.com/in/dhanushkandhan/',
@@ -73,16 +82,20 @@
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={resolvedOgImage} />
 
+  {#if path === '/'}
+    {@html `<script type="application/ld+json">${serializeJsonLd(websiteLd)}<\/script>`}
+  {/if}
+
   <!-- Person JSON-LD -->
-  {@html `<script type="application/ld+json">${JSON.stringify(personLd)}<\/script>`}
+  {@html `<script type="application/ld+json">${serializeJsonLd(personLd)}<\/script>`}
 
   <!-- Breadcrumb JSON-LD -->
   {#if breadcrumbLd}
-    {@html `<script type="application/ld+json">${JSON.stringify(breadcrumbLd)}<\/script>`}
+    {@html `<script type="application/ld+json">${serializeJsonLd(breadcrumbLd)}<\/script>`}
   {/if}
 
   <!-- Custom JSON-LD -->
   {#if jsonLd}
-    {@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}<\/script>`}
+    {@html `<script type="application/ld+json">${serializeJsonLd(jsonLd)}<\/script>`}
   {/if}
 </svelte:head>

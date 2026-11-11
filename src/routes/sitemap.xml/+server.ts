@@ -1,65 +1,29 @@
 import type { RequestHandler } from './$types';
 import { fetchPosts } from '#lib/server/medium';
+import { SITE_URL } from '#lib/site';
 
-const SITE = 'https://dhanu.letretro.com';
+const staticPaths = ['/', '/projects', '/blogs', '/talks', '/contact'];
 
-interface RouteEntry {
-	path: string;
-	changefreq: string;
-	priority: string;
-	lastmod?: string;
+function escapeXml(value: string): string {
+	return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 }
 
-const staticRoutes: RouteEntry[] = [
-	{ path: '', changefreq: 'weekly', priority: '1.0' },
-	{ path: '/projects', changefreq: 'monthly', priority: '0.8' },
-	{ path: '/blogs', changefreq: 'weekly', priority: '0.8' },
-	{ path: '/talks', changefreq: 'monthly', priority: '0.7' },
-	{ path: '/contact', changefreq: 'monthly', priority: '0.6' }
-];
-
 export const GET: RequestHandler = async ({ fetch }) => {
-	let blogRoutes: RouteEntry[] = [];
-
+	let posts;
 	try {
-		const posts = await fetchPosts(fetch);
-		blogRoutes = posts.map((post) => {
-			let lastmod: string | undefined;
-			try {
-				const d = new Date(post.date);
-				if (!isNaN(d.getTime())) {
-					lastmod = d.toISOString().split('T')[0];
-				}
-			} catch {
-				// ignore invalid date
-			}
-			return {
-				path: `/blogs/${post.slug}`,
-				changefreq: 'monthly',
-				priority: '0.7',
-				lastmod
-			};
+		posts = await fetchPosts(fetch);
+	} catch (error) {
+		console.error('[sitemap] Failed to fetch blog posts:', error);
+		return new Response('Sitemap temporarily unavailable', {
+			status: 503,
+			headers: { 'Retry-After': '3600' }
 		});
-	} catch (e) {
-		console.error('[sitemap] Failed to fetch blog posts for sitemap:', e);
 	}
 
-	const allRoutes = [...staticRoutes, ...blogRoutes];
-
-	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allRoutes
-	.map(
-		(r) => `  <url>
-    <loc>${SITE}${r.path}</loc>
-    <changefreq>${r.changefreq}</changefreq>
-    <priority>${r.priority}</priority>${r.lastmod ? `\n    <lastmod>${r.lastmod}</lastmod>` : ''}
-  </url>`
-	)
-	.join('\n')}
-</urlset>`.trim();
-
-	return new Response(sitemap, {
+	const paths = [...staticPaths, ...posts.filter((post) => post.slug).map((post) => `/blogs/${encodeURIComponent(post.slug)}`)];
+	const urls = [...new Set(paths)].map((path) => `  <url><loc>${escapeXml(`${SITE_URL}${path}`)}</loc></url>`).join('\n');
+	return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`, {
 		headers: {
 			'Content-Type': 'application/xml; charset=utf-8',
 			'Cache-Control': 'max-age=0, s-maxage=3600'
