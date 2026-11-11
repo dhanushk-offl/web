@@ -176,7 +176,12 @@
     font-weight: 400;
   }
 
-  .bio p { margin-bottom: 0.9rem; }
+  .bio {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .bio p { margin-bottom: 1rem; }
 
   /* Slideshow */
   .slideshow {
@@ -252,8 +257,8 @@
   .volunteer-list {
     margin: 0 0 1.25rem;
     padding-left: 1.25rem;
-    font-size: 0.95rem;
-    line-height: 1.65;
+    font-size: inherit;
+    line-height: inherit;
     color: #444;
   }
 
@@ -311,6 +316,11 @@
   }
 
   @media (max-width: 640px) {
+    .bio {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     .photo-wrap {
       float: none;
       margin: 0 0 1.5rem 0;
