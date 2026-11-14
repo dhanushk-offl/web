@@ -24,8 +24,9 @@
   <p>
     You can also find me on
     <a href="https://github.com/dhanushk-offl/" target="_blank" rel="noopener noreferrer">GitHub</a>,
-    <a href="https://x.com/akadhanu" target="_blank" rel="noopener noreferrer">X</a>, and
-    <a href="https://www.linkedin.com/in/dhanushkandhan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+    <a href="https://x.com/akadhanu" target="_blank" rel="noopener noreferrer">X</a>,
+    <a href="https://www.linkedin.com/in/dhanushkandhan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, and
+    <a href="https://bsky.app/profile/dhanu.letretro.com" target="_blank" rel="noopener noreferrer">Bluesky</a>.
   </p>
 
   <div class="podcast-section">
