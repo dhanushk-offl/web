@@ -65,17 +65,16 @@
 
   .nav a {
     font-size: 0.9rem;
-    color: #888;
+    color: #2d6a4f;
     white-space: nowrap;
   }
 
-  .nav a:hover,
-  .nav a.active {
+  .nav a:hover {
     color: #2d6a4f;
   }
 
   .nav a.active {
-    font-style: italic;
+    color: #888;
   }
 
   @media (max-width: 640px) {
