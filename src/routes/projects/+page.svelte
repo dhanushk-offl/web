@@ -18,7 +18,7 @@
   <h1>Projects</h1>
   <p class="intro">
     A selection of things I've built. Most of what I build can be found on my
-    <a href="https://github.com/dhanushk-offl" target="_blank" rel="noopener noreferrer">GitHub</a>.
+    <a href="https://github.com/d5v7" target="_blank" rel="noopener noreferrer">GitHub</a>.
   </p>
 
   {#if data.featured.length > 0}

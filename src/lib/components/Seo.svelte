@@ -53,7 +53,7 @@
     name: SITE_NAME,
     url: SITE_URL,
     sameAs: [
-      'https://github.com/dhanushk-offl/',
+      'https://github.com/d5v7/',
       'https://www.linkedin.com/in/dhanushkandhan/',
       'https://x.com/akadhanu'
     ],

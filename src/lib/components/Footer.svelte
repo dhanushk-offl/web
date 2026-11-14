@@ -2,7 +2,7 @@
   <span class="copy">தனுஷ் கந்தன் / ധനുഷ് കന്ദൻ / Dhanush Kandhan &copy; {new Date().getFullYear()}.</span>
   <div class="links">
     <a href="/Dhanush_Kandhan_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-    <a href="https://github.com/dhanushk-offl/" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://github.com/d5v7" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://www.linkedin.com/in/dhanushkandhan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     <a href="https://x.com/akadhanu" target="_blank" rel="noopener noreferrer">X</a>
     <a href="https://bsky.app/profile/dhanu.letretro.com" target="_blank" rel="noopener noreferrer">Bluesky</a>

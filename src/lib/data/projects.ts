@@ -27,14 +27,14 @@ export const projects: Project[] = [
 	{
 		title: 'agentstat',
 		description: 'AI account usage, quotas, balances, and reset times for Rust applications.',
-		link: 'https://github.com/dhanushk-offl/agentstat',
+		link: 'https://github.com/d5v7/agentstat',
 		tags: ['Rust', 'Tool', 'AI', 'Open Source'],
 		year: '2026'
 	},
 	{
 		title: 'Prevu',
 		description: 'Local first Preview social link cards instantly before deployment.',
-		link: 'https://github.com/dhanushk-offl/prevu',
+		link: 'https://github.com/d5v7/prevu',
 		tags: ['Tool', 'Rust', 'Web'],
 		year: '2026',
 		logo: '/assets/images/prev.png'
@@ -42,7 +42,7 @@ export const projects: Project[] = [
 	{
 		title: 'Clynk',
 		description: 'A Secure, Open-Source Clip Syncronization for Android & PC.',
-		link: 'https://github.com/dhanushk-offl/clynk',
+		link: 'https://github.com/d5v7/clynk',
 		tags: ['Tool', 'Android', 'Open Source'],
 		year: '2026',
 		logo: '/assets/images/clynk.png'
@@ -50,7 +50,7 @@ export const projects: Project[] = [
 	{
 		title: 'Guro',
 		description: 'A Lightweight System Monitoring and Benchmarking Package Toolkit',
-		link: 'https://github.com/dhanushk-offl/guro',
+		link: 'https://github.com/d5v7/guro',
 		tags: ['Tool', 'Python', 'System Monitoring', 'Benchmarking'],
 		year: '2025',
 		logo: '/assets/images/guro.png'
@@ -58,7 +58,7 @@ export const projects: Project[] = [
 	{
 		title: 'Hallx',
 		description: 'hallx is a lightweight, model-agnostic hallucination risk engine for LLM outputs.',
-		link: 'https://github.com/dhanushk-offl/hallx',
+		link: 'https://github.com/d5v7/hallx',
 		tags: ['Tool', 'Python', 'LLM'],
 		year: '2026',
 		logo: '/assets/images/hallx.png'
@@ -66,7 +66,7 @@ export const projects: Project[] = [
 	{
 		title: 'Resume Parser Agent',
 		description: 'An agent skill, CLI tool, npm library, and MCP server that deeply parses resumes using the OpenResume 4-step algorithm.',
-		link: 'https://github.com/dhanushk-offl/resume-parser',
+		link: 'https://github.com/d5v7/resume-parser',
 		tags: ['AI Agent', 'Typescript', 'Resume Parser', 'MCP', 'ATS CLI'],
 		year: '2026',
 		logo: '/assets/images/resume-parser.png'
@@ -74,7 +74,7 @@ export const projects: Project[] = [
 	{
 		title: 'Quickwash',
 		description: 'Laundry Pickup & Delivery Management System for Washerman & Ironers',
-		link: 'https://github.com/dhanushk-offl/quickwash/',
+		link: 'https://github.com/d5v7/quickwash/',
 		tags: ['React', 'Expressjs', 'Prisma OEM', 'Fullstack'],
 		year: '2025',
 		logo: '/assets/images/resume-analyzer.png'
@@ -82,7 +82,7 @@ export const projects: Project[] = [
 	{
 		title: 'Resume Analyser',
 		description: 'Evaluate resume fitness for job descriptions.',
-		link: 'https://github.com/dhanushk-offl/resume-analyzer',
+		link: 'https://github.com/d5v7/resume-analyzer',
 		tags: ['AI', 'Career'],
 		year: '2024',
 		logo: '/assets/images/resume-analyzer.png'
